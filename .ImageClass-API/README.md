@@ -34,7 +34,7 @@ ImageClass_API/
 * **FastAPI:** Framework web moderno de alta performance baseado em tipos estáticos.
 * **Pydantic:** Validação estrita de contratos de dados em tempo de execução.
 * **Uvicorn:** Servidor ASGI para execução assíncrona e baixa latência.
-* **Pillow & NumPy:** Pipelines eficientes de processamento de matrizes de pixels em memória.
+* **Pillow & NumPy:** Pipelines eficientes de processamento de matrizes de pixels in-memory.
 
 ---
 
@@ -73,10 +73,20 @@ python -m uvicorn app.main:app --app-dir .ImageClass-API --reload
 
 ## 📊 Documentação dos Endpoints (Swagger)
 
-A documentação interativa automatizada pode ser acessada em tempo real através do navegador no endereço: **`http://127.0.0`**
+A documentação interativa automatizada pode ser acessada em tempo real através do navegador assim que o servidor local estiver ativo.
 
-### 1. Check de Saúde Geral
+👉 **Acesse a interface gráfica para testes em:** **[http://127.0.0](http://127.0.0)**
+
+### 🛠️ Alternativa por Linha de Comando (cURL)
+
+Se preferir validar o funcionamento do sistema diretamente pelo seu terminal, você pode disparar as seguintes requisições:
+
+#### 1. Check de Saúde Geral
 * **Rota:** `GET /health`
+* **Comando:**
+```bash
+curl -X 'GET' 'http://127.0.0' -H 'accept: application/json'
+```
 * **Resposta Esperada (HTTP 200):**
 ```json
 {
@@ -86,9 +96,17 @@ A documentação interativa automatizada pode ser acessada em tempo real atravé
 }
 ```
 
-### 2. Inferência Preditiva Sob Demanda
+#### 2. Inferência Preditiva Sob Demanda
 * **Rota:** `POST /predict`
-* **Tipo de Entrada:** `multipart/form-data` (Envio de arquivo de imagem comum)
+* **Tipo de Entrada:** `multipart/form-data`
+* **Comando:** *(Substitua `caminho/foto.jpg` pelo caminho real de uma imagem no seu computador)*
+```bash
+curl -X 'POST' \
+  'http://127.0.0' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'file=@caminho/foto.jpg;type=image/jpeg'
+```
 * **Contrato de Saída Validado (HTTP 200):**
 ```json
 {
