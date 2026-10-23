@@ -39,9 +39,16 @@ print("\n[INFO] Avaliando o modelo final com os dados de teste...")
 test_loss, test_acc = model.evaluate(x_test, y_test, verbose=2)
 print(f"Acurácia final nos dados de teste: {test_acc*100:.2f}%")
 
-# Salvar o modelo treinado dentro da pasta .ImageClass-API/models/
-nome_modelo = ".ImageClass-API/models/modelo_cifar10.keras"
+# Salvar o modelo treinado na pasta models/
+from pathlib import Path
+
+PASTA_MODELOS = Path(__file__).resolve().parent / "models"
+PASTA_MODELOS.mkdir(parents=True, exist_ok=True)
+
+nome_modelo = PASTA_MODELOS / "modelo_cifar10.keras"
 model.save(nome_modelo)
-print(f"[SUCESSO] Modelo salvo fisicamente em '{nome_modelo}'!")
+
+print(f"[SUCESSO] Modelo salvo em '{nome_modelo}'!")
+
 
 
