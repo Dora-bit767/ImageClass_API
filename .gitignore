@@ -1,0 +1,15 @@
+# Ambientes virtuais
+venv/
+.venv/
+env/
+
+# Arquivos temporários do Python
+__pycache__/
+*.py[cod]
+
+# Configurações locais
+.vscode/
+
+# Imagens de teste locais
+exemplo_cifar10.png
+imagem_sorteada.png
