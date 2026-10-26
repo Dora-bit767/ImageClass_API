@@ -125,7 +125,7 @@ Para testar:
 4. Selecione uma imagem no campo `file`.
 5. Clique em **Execute**.
 
-Exemplo ilustrativo de resposta:
+Exemplo ilustrativo de formato de resposta (valores fictícios; a classe e a confiança variam conforme a imagem enviada):
 
 ```json
 {
@@ -150,6 +150,21 @@ O modelo trabalha com dez categorias:
 8. Cavalo
 9. Navio
 10. Caminhão
+
+
+## Avaliação do modelo
+
+O modelo foi avaliado utilizando o conjunto oficial de teste do CIFAR-10, composto por 10.000 imagens.
+
+Resultados obtidos com o modelo salvo em `models/modelo_cifar10.keras`:
+
+- **Acurácia (accuracy):** 67,96%
+- **Perda (loss):** 0,9406
+
+A avaliação foi realizada carregando o modelo existente, sem executar um novo treinamento, por meio do script `notebooks/avaliar_modelo.py`.
+
+Os resultados representam o desempenho do modelo nesse conjunto de teste e não garantem a mesma taxa de acerto em imagens externas.
+
 
 ## Treinamento do modelo
 
