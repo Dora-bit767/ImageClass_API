@@ -125,7 +125,7 @@ Para testar:
 4. Selecione uma imagem no campo `file`.
 5. Clique em **Execute**.
 
-Exemplo ilustrativo de resposta:
+Exemplo ilustrativo de formato de resposta (valores fictícios; a classe e a confiança variam conforme a imagem enviada):
 
 ```json
 {
@@ -151,9 +151,24 @@ O modelo trabalha com dez categorias:
 9. Navio
 10. Caminhão
 
+## Avaliação do modelo
+
+O modelo foi avaliado utilizando o conjunto oficial de teste do CIFAR-10, composto por 10.000 imagens.
+
+
+Resultados obtidos com o modelo salvo em `models/modelo_cifar10.keras`:
+
+- **Acurácia (accuracy):** 67,96%
+- **Perda (loss):** 0,9406
+
+A avaliação foi realizada por meio do script `notebooks/avaliar_modelo.py`, sem executar um novo treinamento.
+
+Os resultados representam o desempenho do modelo nesse conjunto de teste e não garantem a mesma taxa de acerto em imagens externas.
+
 ## Treinamento do modelo
 
 O script `treinar_modelo.py` realiza o treinamento, a avaliação e o salvamento do modelo na pasta `models/`.
+
 
 **Atenção:** executar esse script novamente treina o modelo outra vez e pode substituir o arquivo salvo. Para utilizar a API, não é necessário treinar novamente se o arquivo do modelo já estiver disponível.
 
@@ -168,5 +183,7 @@ O script `treinar_modelo.py` realiza o treinamento, a avaliação e o salvamento
 
 Projeto desenvolvido para demonstrar conhecimentos em Python, análise de dados, Machine Learning e desenvolvimento de APIs.
 
+## Vídeo de apresentação
 
+[Assistir ao vídeo do projeto no Google Drive](COLE_AQUI_O_LINK_DO_VIDEO)
 
