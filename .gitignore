@@ -13,3 +13,6 @@ __pycache__/
 # Imagens de teste locais
 exemplo_cifar10.png
 imagem_sorteada.png
+
+# Cache dos testes
+.pytest_cache/

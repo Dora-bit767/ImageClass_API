@@ -1,6 +1,7 @@
 # 1. Importar as bibliotecas necessárias
 import tensorflow as tf
 import matplotlib.pyplot as plt
+import os
 
 # 2. Definir os nomes das 10 categorias
 classes = [
@@ -31,3 +32,6 @@ plt.axis("off")
 nome_arquivo = "exemplo_cifar10.png"
 plt.savefig(nome_arquivo, bbox_inches='tight')
 print(f"\n[SUCESSO] Imagem salva com sucesso como '{nome_arquivo}'!")
+
+# Força o Windows a abrir a imagem borrada padrão na tela
+os.system(f"start {nome_arquivo}")
